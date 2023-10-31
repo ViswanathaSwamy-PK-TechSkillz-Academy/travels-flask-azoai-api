@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, json, jsonify
 
 from api.home_routes import home_api_bp
 from api.azoai_routes import azoai_api_bp
@@ -8,13 +8,20 @@ from utils.logging_config import configure_logging
 app = Flask(__name__)
 
 
+@app.errorhandler(Exception)
+def handle_custom_error(e):
+    response = jsonify({'error': str(e)})
+    response.status_code = 500  # You can set the appropriate status code
+    return response
+
+
 def create_app():
 
     # Configure the app's logging settings
     configure_logging(app)
 
-    app.register_error_handler(500, handle_internal_server_error)
-    app.register_error_handler(Exception, handle_error_response)
+    # Register the error handlers
+    app.register_error_handler(Exception, handle_custom_error)
 
     app.logger.info("Starting Gimmicks Travels API")
 

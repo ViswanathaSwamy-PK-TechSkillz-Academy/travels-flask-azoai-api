@@ -1,4 +1,4 @@
-from flask import Blueprint, current_app
+from flask import Blueprint, current_app, jsonify
 
 home_api_bp = Blueprint('home_api_bp', __name__)
 
@@ -14,3 +14,12 @@ def home():
     raise Exception("This is a simulated error")
 
     return 'Welcome to Gimmicks Travels - Python Flask API!'
+
+# Define an error handler for the custom exception
+
+
+# @home_api_bp.errorhandler(Exception)
+# def handle_custom_error(e):
+#     response = jsonify({'error': str(e)})
+#     response.status_code = 500  # You can set the appropriate status code
+#     return response

@@ -2,7 +2,7 @@ from flask import Flask
 from dotenv import dotenv_values
 
 # Import the home.py route
-from api.home_routes import api_routes_bp as home_api_bp
+from api.home.home_routes import home_api_bp
 
 app = Flask(__name__)
 

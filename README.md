@@ -11,6 +11,8 @@ python -m venv .venv
 .venv/Scripts/activate
 pip freeze
 deactivate
+
+pip install Flask python-dotenv openai
 ```
 
 ## Steps to create the API
@@ -18,3 +20,4 @@ deactivate
 > 1. Create a new folder
 > 1. Create an .env file and Environment Variables
 > 1. Create a virtual environment
+> 1. Install `pip install Flask python-dotenv openai` and other dependencies

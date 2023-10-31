@@ -2,6 +2,17 @@
 
 A Simple Python Flask API to Interact with Azure Open AI
 
+## Executing the API
+
+```bash
+set FLASK_APP=app.py    # On Windows
+flask run
+```
+
+```bash
+python app.py           # On Windows
+```
+
 ## Few Commands to get started
 
 ```bash

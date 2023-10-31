@@ -7,6 +7,7 @@ app = Flask(__name__)
 def create_app():
 
     # Register the home_api_bp blueprint
+    app.register_blueprint(home_api_bp, name='home_route_direct')
     app.register_blueprint(home_api_bp, url_prefix='/api')
 
     return app

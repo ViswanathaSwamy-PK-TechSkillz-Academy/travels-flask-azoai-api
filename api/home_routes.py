@@ -11,7 +11,7 @@ def home():
     current_app.logger.info("Processing request to home route")
 
     # Simulate an error by raising an exception
-    # kraise Exception("This is a simulated error")
+    # raise Exception("This is a simulated error")
 
     return jsonify({'data': 'Welcome to Gimmicks Travels - Python Flask API!'}), 200
 

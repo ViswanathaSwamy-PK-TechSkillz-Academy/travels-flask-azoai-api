@@ -18,11 +18,12 @@ def insert_country_info():
         # Get the country information from Azure OpenAI
         country_name = country_data.get('country_name')
         country_data = openai_helper.get_country_info(country_name)
+        print(country_data)
 
-        return jsonify(country_data), 200
+        return [], 200
 
     except Exception as e:
-        azoai_api_bp.logger.exception(
-            "An error occurred while processing the request:")
-
+        # azoai_api_bp.logger.exception(
+        #     "An error occurred while processing the request:")
+        print(e)
         return jsonify({'error': 'An error occurred while processing the request.'}), 500

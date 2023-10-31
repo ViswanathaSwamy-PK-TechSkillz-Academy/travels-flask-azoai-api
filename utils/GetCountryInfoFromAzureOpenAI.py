@@ -25,6 +25,8 @@ class GetCountryInfoFromAzureOpenAI:
             best_of=1,
             stop=None)
 
+        print(response)
+        
         # Assuming the response.choices[0].text is a JSON string
         country_info_json = response.choices[0].text
 

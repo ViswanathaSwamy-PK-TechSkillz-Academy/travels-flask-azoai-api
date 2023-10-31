@@ -1,14 +1,26 @@
 from flask import Flask
+from dotenv import dotenv_values
+
 from api.home_routes import home_api_bp
+from api.azoai_routes import azoai_api_bp
+from utils.logging_config import configure_logging
 
 app = Flask(__name__)
 
 
 def create_app():
 
+    # Load configuration from .env file
+    config_details = dotenv_values(".env")
+
+    # Configure the app's logging settings
+    configure_logging(app)
+
     # Register the home_api_bp blueprint
     app.register_blueprint(home_api_bp, name='home_route_direct')
     app.register_blueprint(home_api_bp, url_prefix='/api')
+
+    app.register_blueprint(azoai_api_bp, url_prefix='/api')
 
     return app
 

@@ -1,6 +1,6 @@
 ﻿# Usage: .\ListStructure.ps1 -Path "C:\Project1"
 # Usage: PowerShell.exe -ExecutionPolicy Bypass -File "C:\Tools\ListStructure.ps1" -Path "C:\GitHub\learn-reactjs-in-2023\taskmanager" -ExcludedFolders ".next", "node_modules"
-# Usage: PowerShell.exe -ExecutionPolicy Bypass -File "C:\Tools\ListStructure.ps1" -Path "C:\GitHub\TSA\travels-flask-azoai-api"  -ExcludedFolders ".venv", "__pychache__", "node_modules", "bin", "obj
+# Usage: PowerShell.exe -ExecutionPolicy Bypass -File "C:\Tools\ListStructure.ps1" -Path "C:\GitHub\TSA\travels-flask-azoai-api"  -ExcludedFolders ".venv"
 param (
     [string]$Path = (Get-Location),
     [string[]]$ExcludedFolders = @("node_modules", ".next", "bin", "obj")

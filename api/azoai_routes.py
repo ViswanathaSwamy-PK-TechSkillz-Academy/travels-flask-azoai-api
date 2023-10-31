@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from utils.GetCountryInfoFromAzureOpenAI import GetCountryInfoFromAzureOpenAI
 
-azoai_api_bp = Blueprint('api_routes', __name__)
+azoai_api_bp = Blueprint('azoai_api_bp', __name__)
 
 # Create an instance of the GetCountryInfoFromAzureOpenAI class
 openai_helper = GetCountryInfoFromAzureOpenAI()

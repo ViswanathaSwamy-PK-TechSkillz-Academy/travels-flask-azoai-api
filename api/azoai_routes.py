@@ -32,9 +32,6 @@ def insert_country_info():
         return country_data, 200
 
     except Exception as e:
-        # azoai_api_bp.logger.exception(
-        #     "An error occurred while processing the request:")
-        # print(e)
         current_app.logger.error(
             "An error occurred while processing the request:", e)
         return jsonify({'error': 'An error occurred while processing the request.'}), 500

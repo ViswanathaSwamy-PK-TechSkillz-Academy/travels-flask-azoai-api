@@ -2,6 +2,7 @@ from flask import Flask
 
 from api.home_routes import home_api_bp
 from api.azoai_routes import azoai_api_bp
+from utils.error_handling import handle_error_response, handle_internal_server_error
 from utils.logging_config import configure_logging
 
 app = Flask(__name__)
@@ -11,6 +12,9 @@ def create_app():
 
     # Configure the app's logging settings
     configure_logging(app)
+
+    app.register_error_handler(500, handle_internal_server_error)
+    app.register_error_handler(Exception, handle_error_response)
 
     app.logger.info("Starting Gimmicks Travels API")
 

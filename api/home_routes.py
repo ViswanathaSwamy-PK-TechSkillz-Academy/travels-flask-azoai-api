@@ -10,4 +10,7 @@ home_api_bp = Blueprint('home_api_bp', __name__)
 def home():
     current_app.logger.info("Processing request to home route")
 
+    # Simulate an error by raising an exception
+    raise Exception("This is a simulated error")
+
     return 'Welcome to Gimmicks Travels - Python Flask API!'

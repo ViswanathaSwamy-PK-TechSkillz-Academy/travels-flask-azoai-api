@@ -22,7 +22,7 @@ def insert_country_info():
         country_data = openai_helper.get_country_info(country_name)
         print(country_data)
 
-        return [], 200
+        return country_data, 200
 
     except Exception as e:
         # azoai_api_bp.logger.exception(

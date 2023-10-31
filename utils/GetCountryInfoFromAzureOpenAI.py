@@ -15,7 +15,7 @@ class GetCountryInfoFromAzureOpenAI:
         input_prompt = f"Please give me the country_name, capital_state, national_bird, country_population for {country_name} in flat JSON object. country_population should be in BIGINT without separators"
 
         response = openai.Completion.create(
-            engine=get_config_value('COMPLETIONS_MODEL'),
+            engine=get_config_value('COMPLETIONS_MODEL_DEPLOYMENT_NAME'),
             prompt=input_prompt,
             temperature=1,
             max_tokens=300,
@@ -26,7 +26,7 @@ class GetCountryInfoFromAzureOpenAI:
             stop=None)
 
         print(response)
-        
+
         # Assuming the response.choices[0].text is a JSON string
         country_info_json = response.choices[0].text
 

@@ -8,6 +8,12 @@ A Simple Python Flask API to Interact with Azure Open AI
 python app.py           # On Windows
 ```
 
+```Powershell
+$env:FLASK_APP = "app"
+$env:FLASK_ENV = "development"
+flask run
+```
+
 ## Few Commands to get started
 
 ```bash

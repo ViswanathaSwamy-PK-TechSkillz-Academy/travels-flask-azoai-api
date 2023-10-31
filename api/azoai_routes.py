@@ -10,13 +10,13 @@ openai_helper = GetCountryInfoFromAzureOpenAI()
 
 
 @azoai_api_bp.route('/getcountryinfo', methods=['GET'])
-def insert_country_info():
+def retrieve_country_info():
     try:
         # Get the 'country_name' parameter from the query string
         country_name = request.args.get('country_name')
 
         current_app.logger.info(
-            "Processing request to /getcountryinfo route", country_name)
+            f"Processing request to /getcountryinfo route for country: {country_name}")
 
         if country_name is None:
             current_app.logger.error(
@@ -27,7 +27,7 @@ def insert_country_info():
         country_data = openai_helper.get_country_info(country_name)
         # print(country_data)
         current_app.logger.info(
-            "Successfully retrieved country information from Azure OpenAI", country_data)
+            f"Successfully retrieved country information from Azure OpenAI for country: {country_data}")
 
         return country_data, 200
 

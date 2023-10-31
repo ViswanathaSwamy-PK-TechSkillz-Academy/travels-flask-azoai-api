@@ -21,3 +21,5 @@ pip install Flask python-dotenv openai
 > 1. Create an .env file and Environment Variables
 > 1. Create a virtual environment
 > 1. Install `pip install Flask python-dotenv openai` and other dependencies
+> 1. pip freeze > requirements.txt
+> 1. Create a `app.py` file

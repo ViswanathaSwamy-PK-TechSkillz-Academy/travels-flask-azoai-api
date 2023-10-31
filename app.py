@@ -1,15 +1,12 @@
 from flask import Flask
-from dotenv import dotenv_values
-
-# Import the home.py route
-from api.home.home_routes import home_api_bp
+from api.home_routes import home_api_bp
 
 app = Flask(__name__)
 
 
 def create_app():
 
-    # Register the API routes blueprint
+    # Register the home_api_bp blueprint
     app.register_blueprint(home_api_bp, url_prefix='/api')
 
     return app

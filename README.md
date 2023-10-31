@@ -6,6 +6,7 @@ A Simple Python Flask API to Interact with Azure Open AI
 
 ```bash
 pip install virtualenv
+python.exe -m pip install --upgrade pip
 python -m venv .venv
 .venv/Scripts/activate
 pip freeze

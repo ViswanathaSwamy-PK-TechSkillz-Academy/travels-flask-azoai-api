@@ -2,7 +2,6 @@ from flask import Flask, jsonify
 
 from api.home_routes import home_api_bp
 from api.azoai_routes import azoai_api_bp
-from utils.error_handling import handle_error_response, handle_internal_server_error
 from utils.logging_config import configure_logging
 
 app = Flask(__name__)

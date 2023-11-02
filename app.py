@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.errorhandler(Exception)
 def handle_custom_error(e):
     response = jsonify({'error': str(e)})
-    response.status_code = 500  # You can set the appropriate status code
+    response.status_code = 500
     return response
 
 

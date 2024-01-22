@@ -1,29 +1,28 @@
 import json
-from openai import OpenAI
+from openai import AzureOpenAI
 import os
 from utils.env_config import get_config_value
 
 
 class GetCountryInfoFromAzureOpenAI:
+    client = None
+
     def __init__(self):
-        # openai.api_type = "azure"
-        # openai.api_base = get_config_value('OPENAI_API_BASE')
-        # openai.api_version = get_config_value('OPENAI_API_VERSION')
-        # openai.api_key = os.getenv("OPENAI_API_KEY")
-        client = OpenAI(
+        print(os.getenv("OPENAI_API_KEY"))
+        client = AzureOpenAI(
             api_version=get_config_value('OPENAI_API_VERSION'),
-            azure_deployment=get_config_value(
-                'COMPLETIONS_MODEL_DEPLOYMENT_NAME'),
             azure_endpoint=get_config_value('OPENAI_API_BASE'),
             api_key=os.getenv("OPENAI_API_KEY"),
         )
+        self.client = client
 
     def get_country_info(self, country_name):
         input_prompt = f"Please give me the country_name, capital_state, national_bird, country_population for {
             country_name} in flat JSON object. country_population should be in BIGINT without separators"
 
         response = self.client.Completion.create(
-            engine=get_config_value('COMPLETIONS_MODEL_DEPLOYMENT_NAME'),
+            deployment_name=get_config_value(
+                'COMPLETIONS_MODEL_DEPLOYMENT_NAME'),
             prompt=input_prompt,
             temperature=1,
             max_tokens=300,

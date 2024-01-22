@@ -25,6 +25,7 @@ pip freeze
 deactivate
 
 pip install Flask python-dotenv openai
+pip freeze > ./requirements
 ```
 
 ## Steps to create the API

@@ -20,8 +20,8 @@ class GetCountryInfoFromAzureOpenAI:
         input_prompt = f"Please give me the country_name, capital_state, national_bird, country_population for {
             country_name} in flat JSON object. country_population should be in BIGINT without separators"
 
-        response = self.client.Completion.create(
-            deployment_name=get_config_value(
+        response = self.client.completions.create(
+            model=get_config_value(
                 'COMPLETIONS_MODEL_DEPLOYMENT_NAME'),
             prompt=input_prompt,
             temperature=1,

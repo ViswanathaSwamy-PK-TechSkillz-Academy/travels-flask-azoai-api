@@ -8,13 +8,11 @@ class GetCountryInfoFromAzureOpenAI:
     client = None
 
     def __init__(self):
-        print(os.getenv("OPENAI_API_KEY"))
-        client = AzureOpenAI(
+        self.client = AzureOpenAI(
             api_version=get_config_value('OPENAI_API_VERSION'),
             azure_endpoint=get_config_value('OPENAI_API_BASE'),
             api_key=os.getenv("OPENAI_API_KEY"),
         )
-        self.client = client
 
     def get_country_info(self, country_name):
         input_prompt = f"Please give me the country_name, capital_state, national_bird, country_population for {

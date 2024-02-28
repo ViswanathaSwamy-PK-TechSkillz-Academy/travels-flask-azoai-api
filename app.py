@@ -40,6 +40,7 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5009, debug=True)  # During development
 
 # # For production deployment, comment out the above lines and use the one below (Flask run)
+# # This can also be used for development while running the app from Debug mode in VS Code
 # print("Starting Python Flask Server For Gimmicks Travels API using Flask run")
 # app = create_app()
 # app.run()  # In production

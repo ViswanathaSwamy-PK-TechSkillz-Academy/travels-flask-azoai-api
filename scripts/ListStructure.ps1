@@ -1,9 +1,9 @@
 ﻿# Usage: .\ListStructure.ps1 -Path "C:\Project1"
 # Usage: PowerShell.exe -ExecutionPolicy Bypass -File "C:\Tools\ListStructure.ps1" -Path "C:\GitHub\learn-reactjs-in-2023\taskmanager" -ExcludedFolders ".next", "node_modules"
-# Usage: PowerShell.exe -ExecutionPolicy Bypass -File "C:\Tools\ListStructure.ps1" -Path "C:\GitHub\TSA\travels-flask-azoai-api"  -ExcludedFolders ".venv"
+# Usage: PowerShell.exe -ExecutionPolicy Bypass -File "D:\TSA\travels-flask-azoai-api\scripts\ListStructure.ps1" -Path "D:\TSA\travels-flask-azoai-api"
 param (
     [string]$Path = (Get-Location),
-    [string[]]$ExcludedFolders = @("node_modules", ".next", "bin", "obj")
+    [string[]]$ExcludedFolders = @("node_modules", ".next", "bin", "obj", "__pycache__", ".venv")
 )
 
 function List-DirectoryStructure {
